@@ -1,0 +1,12 @@
+gotour:
+  container_name: docker-gotour
+  image: golang
+  hostname: golang.dev
+  volumes:
+    - $PWD/workspace:/workspace
+  ports:
+    - "3999:3999"
+  working_dir: /workspace
+  environment:
+    - GOPATH=/workspace
+  command: /workspace/run.sh
